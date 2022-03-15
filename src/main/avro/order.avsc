@@ -1,0 +1,48 @@
+{
+  "name":"Order",
+  "type":"record",
+  "namespace":"com.solace.sample",
+  "version":"1",
+  "fields": [
+    {
+      "name":"orderNumber",
+      "type":"long"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "store",
+      "type": "string"
+    },
+    {
+      "name":"requestTime",
+      "type":"string"
+    },
+    {
+      "name":"customerID",
+      "type":"long"
+    },
+    {
+      "name": "items",
+      "type" : {
+        "type": "array",
+        "items": {
+          "name": "item",
+          "type": "record",
+          "fields": [
+            {
+              "name": "itemName",
+              "type": "string"
+            },
+            {
+              "name": "itemQuantity",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
