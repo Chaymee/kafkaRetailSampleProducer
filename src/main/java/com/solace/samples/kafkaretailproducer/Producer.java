@@ -28,7 +28,6 @@ public class Producer {
             final String key = "created";
             int recordNumber = 0;
             GenerateOrder order = new GenerateOrder();
-            System.out.println("Status: " + order.getOrder().getStatus());
              producer.send(topic.name(), key, order.getOrder()).addCallback(
                     result-> {
                         final RecordMetadata m;
